@@ -1,0 +1,34 @@
+.toolbar {
+    font-weight: 300;
+
+    >.brand {
+        font-weight: 400;
+    }
+}
+
+.toolbar-navigation {
+    display: flex;
+
+    >div {
+        cursor: pointer;
+        margin: 0 1rem;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.active {
+            border-bottom: 2px solid white;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .toolbar-navigation {
+
+        >div {
+            cursor: pointer;
+            margin: 0 .25rem;
+        }
+    }
+}

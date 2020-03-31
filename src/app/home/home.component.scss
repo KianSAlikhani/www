@@ -1,0 +1,76 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+
+    .profile-links {
+        width: 60%;
+    }
+
+    .home-intro {
+        width: 40%;
+        margin: 4rem 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .home-wrapper {
+        flex-direction: column;
+
+        .profile-links {
+            width: auto;
+        }
+    
+        .home-intro {
+            width: auto;
+            margin: 4rem;
+        }
+    }
+}
+
+.home-section {
+    padding: 4rem;
+}
+
+.light-bg {
+    background-color: #343645;
+}
+
+.dark-bg {
+    background-color: #252733;
+}
+
+.home-card {
+    >.home-card-header {
+        color: #95979e;
+    }
+
+    >.home-card-title {
+        font-size: 2rem;
+        color: white;
+    }
+
+    >.home-card-body {
+        color: #95979e;
+    }
+
+    >.home-card-footer {
+        font-size: 1.5rem;
+        color: #f7c46d;
+        text-decoration: underline;
+        
+        >:first-child {
+            margin-right: .5rem;
+        }
+        
+        >:last-child {
+            margin-left: .5rem;
+        }
+    }
+}
