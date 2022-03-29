@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  node:
+  build-package-deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -42,3 +42,13 @@ jobs:
           context: ./
           tags: kianalikhani/www:latest
           push: true
+
+      - name: Rancher Deploy
+        uses: yantadeu/rancher-deploy-action@v0.0.3
+        env:
+          RANCHER_ACCESS_KEY: ${{ secrets.RANCHER_USERNAME }}
+          RANCHER_SECRET_KEY: ${{ secrets.RANCHER_PASSWORD }}
+          RANCHER_URL_API: 'https://rancher.alikhani.io/v3'
+          SERVICE_NAME: 'kianalikhani-www'
+          DOCKER_IMAGE: 'kianalikhani/www:latest'
+          DOCKER_IMAGE_LATEST: 'kianalikhani/www:latest'
